@@ -3,9 +3,7 @@
     <?php include 'views/partials/_menu.php' ?>
 
     <section class="container">
-        <div class="mars">
-            <canvas id="canvas" width="500" height="500"></canvas>
-        </div>
+        <div id="marsloc"></div>
         <div class="informations">
             <div class="info info-title">
                 <h1>Curiosity</h1>
@@ -31,3 +29,6 @@
         </div>
     </section>
 </div>
+<script src='<?= URL ?>assets/js/three.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/orbitcontrols.js'></script>
+<script src="<?= URL ?>assets/js/app.js"></script>

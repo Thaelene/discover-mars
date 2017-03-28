@@ -1,6 +1,6 @@
 <?php
 
-define('URL', 'http://localhost:8888/');
+define('URL', 'http://localhost:8888/discover-mars/dist/');
 
 
 // // Connexion variables

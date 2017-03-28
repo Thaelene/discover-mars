@@ -67,12 +67,14 @@ gulp.task('styles', function () {
 gulp.task( 'javascript', function()
 {
     return gulp.src( [
-            './src/js/main.js',
+            config.src + 'js/main.js'
         ] )
         .pipe(gulp_plumber({
-            errorHandler: gulp_notify.onError("JS Error: <%= error.message %>")}))
+            errorHandler: gulp_notify.onError("JS Error: <%= error.message %>")
+        }))
         .pipe(gulp_sourcemaps.init())
         .pipe( gulp_uglify() )
+        .pipe( gulp_concat( 'main.min.js' ) )
         .pipe(gulp_sourcemaps.write())
         .pipe( gulp.dest(config.assets + 'js' ) );
 } );
