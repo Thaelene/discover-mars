@@ -1,0 +1,67 @@
+.rover
+{
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    animation: anim-rover 2s 1;
+
+    img
+    {
+        width: 50vw;
+    }
+}
+@keyframes anim-rover
+{
+    0%
+    {
+        left: -50%;
+    }
+    100%
+    {
+        left: 5%;
+    }
+}
+.introduce
+{
+    max-width: 400px;
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    animation: anim-text 2s 1;
+
+    .introduce-text
+    {
+        padding: 2em 0;
+    }
+}
+@keyframes anim-text
+{
+    0%
+    {
+        right: -50%;
+    }
+    100%
+    {
+        right: 10%;
+    }
+}
+
+.button
+{
+    width: 150px;
+    height : 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius : 150px;
+    border : thin solid $main-color;
+    color: $main-color;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover
+    {
+        background-color: $main-color;
+        color: white;
+    }
+}

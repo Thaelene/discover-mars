@@ -1,0 +1,153 @@
+
+.container-dashboard
+{
+    display: flex;
+
+    .menu
+    {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        transform: translateX(-100%);
+        will-change : transform;
+
+        &.anim-menu
+        {
+            transform: translate(0);
+            transition: transform 2s ease-in-out
+        }
+        &.anim-quit
+        {
+            transform: translate(-100%);
+            transition: transform 2s ease-in-out
+        }
+
+        .menu-box
+        {
+            background-color: $bg-color;
+            flex-grow: 2;
+            width: 80%;
+
+            img
+            {
+                width: 20em;
+                margin: 5em 0;
+
+            }
+
+            p
+            {
+                max-width: 80%;
+                padding: 10px 0;
+            }
+
+            .menu-share
+            {
+                font-size: 20px;
+                margin: 3em 0;
+                width: 50px;
+                justify-content: space-between;
+                display: flex;
+                cursor: pointer;
+                color : $main-color;
+
+            }
+        }
+
+        .menu-quit
+        {
+            align-items: center;
+            flex-grow: 1;
+            background-color: none;
+            color: $main-color;
+            justify-content: center;
+            display: flex;
+            font-size: 25px;
+            border-left: solid thin $line-color;
+            background-color: rgba(#020416, 0.80);
+        }
+    }
+    header
+    {
+        width: 10%;
+        height: 100vh;
+        border-right : solid thin $line-color;
+        padding: 2em;
+        nav
+        {
+            img
+            {
+                max-width: 100%;
+            }
+            i
+            {
+                font-size: 25px;
+                margin: 10em 0;
+                display: flex;
+                justify-content: center;
+                color: $main-color;
+                cursor: pointer;
+            }
+        }
+    }
+    section
+    {
+        width: 90%;
+        height: 100vh;
+        display: flex;
+
+        .mars
+        {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            width: 60%;
+
+            canvas
+            {
+                background-color: white;
+            }
+        }
+
+        .informations
+        {
+            width: 40%;
+            text-align: right;
+        }
+        .info
+        {
+            position: relative;
+        }
+        .info-title
+        {
+            margin-bottom: 3em;
+        }
+        .info-date, .info-rover
+        {
+            margin-bottom: 1em;
+        }
+        .info-bloc
+        {
+            padding: 3em 0;
+        }
+        .button
+        {
+            margin: auto;
+        }
+    }
+}
+
+.border
+{
+    border-bottom: thin solid $line-color;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.border-large { width: 400px;}
+.border-small { width: 200px; }
