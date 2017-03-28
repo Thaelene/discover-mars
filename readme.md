@@ -1,6 +1,6 @@
-# PHP Template
+# DISCOVER MARS
 
-A PHP template ready-to-use for any project.
+Find more informations about Mars and its robot Curiosity !
 
 ## Prerequisites
 
@@ -13,15 +13,17 @@ You will need to install
 
 How to get started with the development environment running.
 
-* First install node-modules
+* Install node-modules
 
 ```
 sudo npm install
 ```
 
-* Then create your own database
+* Do not forget to change the URL in the include/config.php
 
-* Define your database, your local address and port in include/config.php
+* And you are good to go !
 
-
-And now enjoy !
+### Built with
+* WebGL
+* php
+* Nasa's API
