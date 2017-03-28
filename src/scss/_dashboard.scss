@@ -1,7 +1,8 @@
-
 .container-dashboard
 {
     display: flex;
+
+    // MENU STYLE
 
     .menu
     {
@@ -36,7 +37,6 @@
             {
                 width: 20em;
                 margin: 5em 0;
-
             }
 
             p
@@ -47,14 +47,14 @@
 
             .menu-share
             {
-                font-size: 20px;
+                font-size: 10px;
                 margin: 3em 0;
-                width: 50px;
+                width: 100px;
                 justify-content: space-between;
                 display: flex;
                 cursor: pointer;
                 color : $main-color;
-
+                font-weight: 600;
             }
         }
 
@@ -94,6 +94,9 @@
             }
         }
     }
+
+    // MARS STYLE
+
     section
     {
         width: 90%;
@@ -136,7 +139,7 @@
         }
         .button
         {
-            margin: auto;
+            float: right;
         }
     }
 }

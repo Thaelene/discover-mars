@@ -13,6 +13,10 @@ else if ($q == 'dashboard')
 {
 	$page = 'dashboard';
 }
+else if ($q == 'gallery')
+{
+	$page = 'gallery';
+}
 else
 {
 	$page = '404';
