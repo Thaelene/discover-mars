@@ -24,17 +24,16 @@
                     <h2>Informations</h2>
                     <div class="border border-small"></div>
                 </div>
-                <p>Temperature</p>
-                <p><?= $_forecast->sol ?></p>
-                <p><?= $_forecast->min_temp ?></p>
-                <p><?= $_forecast->max_temp ?></p>
-                <p><?= $_forecast->pressure ?></p>
-                <p><?= $_forecast->pressure_string ?></p>
-                <p><?= $_forecast->atmo_opacity ?></p>
-                <p><?= substr($_forecast->sunrise, 11, -4) ?></p>
-                <p><?= substr($_forecast->sunset, 11, -4) ?></p>
-                <p>Pression</p>
-                <p>Sunrise</p>
+                <div class="info-bloc-content">
+                    <p>Sol : <span><?= $_forecast->sol ?></span></p>
+                    <p>Minimal temperature : <span><?= $_forecast->min_temp ?></span></p>
+                    <p>Maximal temperature : <span><?= $_forecast->max_temp ?></span></p>
+                    <p>Pression : <span><?= $_forecast->pressure ?></span></p>
+                    <p>Type of pressure : <span><?= $_forecast->pressure_string ?></span></p>
+                    <p>Atmosphere opacity : <span><?= $_forecast->atmo_opacity ?></span></p>
+                    <p>Sunrise : <span><?= substr($_forecast->sunrise, 11, -4) ?></span></p>
+                    <p>Sunset : <span><?= substr($_forecast->sunset, 11, -4) ?></span></p>
+                </div>
             <?php endforeach; }?>
             </div>
 
