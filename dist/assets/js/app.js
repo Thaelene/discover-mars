@@ -1,7 +1,8 @@
 var renderer = new THREE.WebGLRenderer({
     antialiasing : true
 });
-renderer.setSize(600, 600)
+
+renderer.setSize((window.innerWidth- 350), window.innerHeight)
 marsloc.appendChild(renderer.domElement)
 renderer.shadowMapEnabled	= true
 
@@ -9,7 +10,7 @@ var scene = new THREE.Scene()
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000)
 camera.position.z = 1
 camera.target = new THREE.Vector3(0.2, 0, 0)
-camera.position.set(1800, 0, 0)
+camera.position.set(200, 0, 0)
 
 var light = new THREE.AmbientLight( 0x222222 )
 scene.add( light )
@@ -36,7 +37,7 @@ light.shadowMapHeight	= 1024
 
 createStarfield = function ()
 {
-    var texture	= THREE.ImageUtils.loadTexture('discover-mars/dist/assets/img/galaxy_starfield.png');
+    var texture	= THREE.ImageUtils.loadTexture('assets/img/galaxy_starfield.png');
 	var material	= new THREE.MeshPhongMaterial({
 		map	: texture,
 		side	: THREE.BackSide
@@ -51,10 +52,10 @@ scene.add(starSphere)
 
 createMars = function()
 {
-    var geometry	= new THREE.SphereGeometry(500, 32, 32);
+    var geometry	= new THREE.SphereGeometry(60, 40, 40);
 	var material	= new THREE.MeshPhongMaterial({
-		map	: THREE.ImageUtils.loadTexture('discover-mars/dist/assets/img/marsmap1k.jpg'),
-		bumpMap	: THREE.ImageUtils.loadTexture('discover-mars/dist/assets/img/marsbump1k.jpg'),
+		map	: THREE.ImageUtils.loadTexture('assets/img/marsmap1k.jpg'),
+		bumpMap	: THREE.ImageUtils.loadTexture('assets/img/marsbump1k.jpg'),
 		bumpScale: 0.05
 	});
 	var mesh	= new THREE.Mesh(geometry, material)

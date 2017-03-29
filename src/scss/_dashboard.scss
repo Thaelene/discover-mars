@@ -107,23 +107,19 @@
         height: 100vh;
         display: flex;
 
-        .mars
+        #marsloc
         {
             display: flex;
             align-self: center;
             justify-content: center;
-            width: 60%;
-
-            canvas
-            {
-                background-color: white;
-            }
         }
 
         .informations
         {
-            width: 40%;
             text-align: right;
+            position: absolute;
+            top: 20%;
+            right: 5%;
         }
         .info
         {
