@@ -44,7 +44,7 @@ createStarfield = function ()
 		map	: texture,
 		side	: THREE.BackSide
 	});
-	var geometry	= new THREE.SphereGeometry(2500, 400, 400)
+	var geometry	= new THREE.SphereGeometry(500, 400, 400)
 	var mesh	= new THREE.Mesh(geometry, material)
 	return mesh
 };
@@ -114,7 +114,7 @@ marsloc.addEventListener('mouseup', function() {
 
 window.addEventListener( 'resize', onWindowResize, false );
 
-// Responsive 
+// Responsive
 function onWindowResize(){
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
