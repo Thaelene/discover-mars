@@ -11,10 +11,10 @@ $_SESSION['date'] = (isset($_GET['date'])) ? $_GET['date'] : $_SESSION['date'];
 // Verify if curiosity was on Mars at the date to limit useless requests
 if(!empty($_GET['date'])) {
     if (($_GET['date']) > (date('Y-m-d', strtotime('-21 day')))) {
-        $error_messages['date'] = "La date doit être inférieure à 3 semaines à la date d'aujourd'hui";
+        $error_messages['date'] = "The date must be anterior of to 3 weeks of today.";
     }
     else if (($_GET['date']) < ("2014-04-10")) {
-        $error_messages['date'] = "La date est inférieure à la mise en fonction de toutes les fonctionnalités de Curiosity";
+        $error_messages['date'] = "The date must be posterior of the launch of all features of Curiosity.";
     }
 }
 
