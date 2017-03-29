@@ -41,20 +41,30 @@
 
     .container-image
     {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
         .image-card
         {
-            margin : 0 auto 10em auto;
-            width: 70%;
+            width: 300px;
+            margin: 2em 0;
 
             .image
             {
-                padding: 2em 0;
+                width: 300px;
+                height: 300px;
+                display: flex;
 
                 img
                 {
                     width: 100%;
                     height: auto;
                 }
+            }
+            p
+            {
+                padding-top: 1em;
             }
         }
     }
