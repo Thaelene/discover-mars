@@ -43,12 +43,14 @@
     {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
+        width: 90%;
 
         .image-card
         {
             width: 300px;
             margin: 2em 0;
+            cursor: pointer;
 
             .image
             {
@@ -65,6 +67,8 @@
             p
             {
                 padding-top: 1em;
+                color : #8f8f8f;
+                font-style: italic;
             }
         }
     }
