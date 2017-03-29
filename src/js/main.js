@@ -1,9 +1,11 @@
 var menu = document.querySelector('.menuButton');
 var quit = document.querySelector('.menuQuit');
-
+var scrollToTop = document.querySelector('.array-top');
+var dashboard = document.querySelector('.container-dashboard');
 var menuBox = document.querySelector('.menu');
 
 var isOpen = false;
+
 
 menu.addEventListener('click', function()
 {

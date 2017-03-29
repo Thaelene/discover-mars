@@ -1,5 +1,14 @@
 // STYLE FOR GALLERY INFORMATIONS
 
+.array-top
+{
+    font-size: 30px;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    color: $main-color;
+}
+
 .container
 {
     border-left : solid thin $line-color;

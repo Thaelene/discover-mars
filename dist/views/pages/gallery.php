@@ -6,6 +6,10 @@
 
 <!-- GALLERY INFORMATIONS -->
 
+    <a class="array-top" href="#">
+        <i class="fa fa-sort-asc" class="array-top" aria-hidden="true"></i>
+    </a>
+
     <section class="container full">
         <div class="gallery-info">
             <a href="dashboard" class="back">

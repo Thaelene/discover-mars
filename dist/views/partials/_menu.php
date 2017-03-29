@@ -13,7 +13,7 @@
             The remote control arm is articulated to the front of the rover and supports at its end the sampling equipment as well as two scientific instruments. The rear of the housing is occupied by the radioisotope thermoelectric generator overhanging the telecommunications antennas.
         </p>
         <div class="menu-share">
-            <a href="#">TWITTER</a><a href="#">FACEBOOK</a>
+            <a href="https://twitter.com/MarsCuriosity" target="_blank">TWITTER</a><a href="https://www.facebook.com/MarsCuriosity/?fref=ts" target="_blank">FACEBOOK</a>
         </div>
     </div>
 </div>

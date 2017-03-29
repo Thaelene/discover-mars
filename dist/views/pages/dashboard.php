@@ -41,7 +41,7 @@
             <?php endforeach; }?>
             </div>
 
-            <div><a href="gallery" class="button">Check the gallery</a></div>
+            <div><a href="gallery" class="button">CHECK THE GALLERY</a></div>
         </div>
     </section>
 </div>
