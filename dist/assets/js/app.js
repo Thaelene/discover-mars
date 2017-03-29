@@ -2,7 +2,7 @@ var renderer = new THREE.WebGLRenderer({
     antialiasing : true
 });
 
-renderer.setSize((window.innerWidth- 350), window.innerHeight)
+renderer.setSize((window.innerWidth - 130), window.innerHeight)
 marsloc.appendChild(renderer.domElement)
 renderer.shadowMapEnabled	= true
 
@@ -42,7 +42,7 @@ createStarfield = function ()
 		map	: texture,
 		side	: THREE.BackSide
 	});
-	var geometry	= new THREE.SphereGeometry(2800, 400, 400)
+	var geometry	= new THREE.SphereGeometry(2500, 400, 400)
 	var mesh	= new THREE.Mesh(geometry, material)
 	return mesh
 };
@@ -52,7 +52,7 @@ scene.add(starSphere)
 
 createMars = function()
 {
-    var geometry	= new THREE.SphereGeometry(60, 40, 40);
+    var geometry	= new THREE.SphereGeometry(60, 80, 80);
 	var material	= new THREE.MeshPhongMaterial({
 		map	: THREE.ImageUtils.loadTexture('assets/img/marsmap1k.jpg'),
 		bumpMap	: THREE.ImageUtils.loadTexture('assets/img/marsbump1k.jpg'),
@@ -84,7 +84,7 @@ function animate(){
 function render(){
    var delta = clock.getDelta()
    marsMesh.rotation.y += 0.1 * delta;
-   // starSphere.rotation.y += 0.1 * delta;
+   starSphere.rotation.y += 0.1 * delta;
    renderer.clear()
    renderer.render(scene, camera)
 };
@@ -109,5 +109,5 @@ window.addEventListener( 'resize', onWindowResize, false );
 function onWindowResize(){
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth - 40, window.innerHeight - 40);
+  renderer.setSize(window.innerWidth -130, window.innerHeight);
 };
