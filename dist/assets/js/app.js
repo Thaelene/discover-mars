@@ -8,10 +8,10 @@ marsloc.appendChild(renderer.domElement)
 renderer.shadowMapEnabled	= true
 
 var scene = new THREE.Scene()
-var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 10000)
+var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000)
 camera.position.z = 1
 camera.target = new THREE.Vector3(0.2, 0, 0)
-camera.position.set(200, 0, 0)
+camera.position.set(100, 0, 0)
 
 // Set lights
 var light = new THREE.AmbientLight( 0x222222 )
@@ -39,12 +39,13 @@ light.shadowMapHeight	= 1024
 // Init stars
 createStarfield = function ()
 {
-    var texture	= THREE.ImageUtils.loadTexture('assets/img/galaxy_starfield.png');
+    var texture	= THREE.ImageUtils.loadTexture('assets/img/galaxy_starfield.png')
+    var geometry	= new THREE.SphereGeometry(400, 400, 400)
 	var material	= new THREE.MeshPhongMaterial({
 		map	: texture,
 		side	: THREE.BackSide
 	});
-	var geometry	= new THREE.SphereGeometry(500, 400, 400)
+
 	var mesh	= new THREE.Mesh(geometry, material)
 	return mesh
 };
@@ -53,14 +54,15 @@ createStarfield = function ()
 var starSphere = createStarfield()
 scene.add(starSphere)
 
-
 // Init Mars
 createMars = function()
 {
-    var geometry	= new THREE.SphereGeometry(60, 80, 80);
+    var texture = THREE.ImageUtils.loadTexture('assets/img/marsmap1k.jpg')
+    var bump_texture = THREE.ImageUtils.loadTexture('assets/img/marsbump1k.jpg')
+    var geometry	= new THREE.SphereGeometry(70, 80, 80);
 	var material	= new THREE.MeshPhongMaterial({
-		map	: THREE.ImageUtils.loadTexture('assets/img/marsmap1k.jpg'),
-		bumpMap	: THREE.ImageUtils.loadTexture('assets/img/marsbump1k.jpg'),
+		map	: texture,
+		bumpMap	: bump_texture,
 		bumpScale: 0.05
 	});
 	var mesh	= new THREE.Mesh(geometry, material)
@@ -75,12 +77,6 @@ scene.add(container_mars)
 
 var marsMesh = createMars()
 container_mars.add(marsMesh)
-
-// Call the controls library
-let controls = new THREE.OrbitControls(camera, renderer.domElement)
-controls.addEventListener('change', render)
-controls.minDistance = 180;
-controls.maxDistance = 350;
 
 let clock = new THREE.Clock()
 
@@ -103,9 +99,6 @@ function animate()
   controls.update();
   render()
 };
-
-animate()
-
 
 // Set grab cursor
 marsloc.addEventListener('mousedown', function()
@@ -154,3 +147,11 @@ function zoomShortcut(e){
   }
 }
 load();
+// Call the controls library
+let controls = new THREE.OrbitControls(camera, renderer.domElement)
+controls.addEventListener('change', render)
+controls.minDistance = 200;
+controls.maxDistance = 350;
+
+// Animate the render
+animate()
