@@ -6,7 +6,6 @@
     #marsloc
     {
       cursor: grab;
-      height: 100vh;
     }
 
     // MENU STYLE
@@ -104,6 +103,7 @@
     section
     {
         width: 100vw;
+        height: 100vh;
         border-left: solid thin $line-color;
 
         #marsloc

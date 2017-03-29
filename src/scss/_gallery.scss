@@ -4,6 +4,11 @@
 {
     border-left : solid thin $line-color;
 
+    &.full
+    {
+        height: 100%;
+    }
+    
     .gallery-info
     {
         .back

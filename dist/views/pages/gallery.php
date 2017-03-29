@@ -6,7 +6,7 @@
 
 <!-- GALLERY INFORMATIONS -->
 
-    <section class="container">
+    <section class="container full">
         <div class="gallery-info">
             <a href="dashboard" class="back">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>QUIT GALLERY
