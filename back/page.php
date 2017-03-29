@@ -1,8 +1,7 @@
 <?php
 include "handle.php";
-session_start();
-echo $_SESSION['date'];
 ?>
+<p>Date : <?= $_SESSION['date'] ?></p>
 
 <?php foreach ($forecast_photo->photos as $_forecast): ?> <!-- Display each photo infos -->
     <?php if (($_forecast->camera->name == $camera) || (($_forecast->camera->name == $camera[0]) || ($_forecast->camera->name == $camera[1]) || ($_forecast->camera->name == $camera[2]))) { ?>

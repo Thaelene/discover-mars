@@ -6,7 +6,7 @@ $camera = (isset($_GET['camera'])) ? $_GET['camera'] : ['FHAZ', 'RHAZ', 'NAVCAM'
 if ($camera == '') { $camera = ['FHAZ', 'RHAZ', 'NAVCAM']; };
 $error_messages = array();
 
-$_SESSION['date'] = $_GET['date'];
+$_SESSION['date'] = (isset($_GET['date'])) ? $_GET['date'] : $_SESSION['date'];
 
 // Verify if curiosity was on Mars at the date to limit useless requests
 if(!empty($_GET['date'])) {
