@@ -1,6 +1,7 @@
 <?php
 // If it is empty, the date become : today - 3 weeks
 $date = !empty($_GET['date']) ? date_format(new DateTime($_GET['date']), 'Y-m-d') : (date('Y-m-d', strtotime('-21 day')));
+$camera = (isset($_GET['camera'])) ? $_GET['camera'] : '';
 $error_messages = array();
 
 // Verify if curiosity was on Mars at the date to limit useless requests

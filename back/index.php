@@ -14,14 +14,24 @@ include 'handle.php';
 <body>
 
     <form action="#" method="get">
-        <input type="date" name="date" value="<?= $date ?>" required name="date">
+        <input type="date" name="date" value="<?= $date ?>" required name="date"> <!-- Select the date -->
+
+        <select name="camera" size="1"> <!-- Select the camera and display active camera in the button -->
+            <option <?php if ($camera == "") { ?>selected<?php } ?> value="">All</option>
+            <option <?php if ($camera == "FHAZ") { ?>selected<?php } ?> value="FHAZ">FHAZ</option>
+            <option <?php if ($camera == "RHAZ") { ?>selected<?php } ?> value="RHAZ">RHAZ</option>
+            <option <?php if ($camera == "MAST") { ?>selected<?php } ?> value="MAST">MAST</option>
+            <option <?php if ($camera == "NAVCAM") { ?>selected<?php } ?> value="NAVCAM">NAVCAM</option>
+        </select>
         <input type="submit">
     </form>
-    <p class="error"><?= array_key_exists('date', $error_messages) ? $error_messages['date'] : '' ?></p> <!-- Error messages -->
+
+    <p class="error"><?= array_key_exists('date', $error_messages) ? $error_messages['date'] : '' ?></p> <!-- Error messages when date is wrong -->
 
     <h1>Date : <?= Date('d/m/Y', strtotime($date)) ?></h1>
 
-    <?php if(empty($error_messages)) { foreach ($forecast_info->results as $_forecast): ?> <!-- Display each infos -->
+    <!-- If they are no error -->
+    <?php if(empty($error_messages)) { foreach ($forecast_info->results as $_forecast): ?> <!-- Display each infos of Mars -->
         <div>
             <br><strong>Sol : </strong><span><?= $_forecast->sol ?></span>
             <br><strong>Température minimale : </strong><span><?= $_forecast->min_temp ?></span>
@@ -29,16 +39,18 @@ include 'handle.php';
             <br><strong>Pression : </strong><span><?= $_forecast->pressure ?></span>
             <br><strong>Pression (descriptif) : </strong><span><?= $_forecast->pressure_string ?></span>
             <br><strong>Opacité de l'atmosphère : </strong><span><?= $_forecast->atmo_opacity ?></span>
-            <br><strong>Lever du soleil : </strong><span><?= substr($_forecast->sunrise, 11, -4) ?></span>
+            <br><strong>Lever du soleil : </strong><span><?= substr($_forecast->sunrise, 11, -4) ?></span> <!-- Formate this element for a better readability -->
             <br><strong>Coucher du soleil : </strong><span><?= substr($_forecast->sunset, 11, -4) ?></span>
         </div>
     <?php endforeach; ?>
 
-    <?php foreach ($forecast_photo->photos as $_forecast): ?> <!-- If they are no error, display each photo infos -->
+    <?php foreach ($forecast_photo->photos as $_forecast): ?> <!-- Display each photo infos -->
+        <?php if (($_forecast->camera->name == $camera) || ($camera == "")) { ?>
         <div>
             <br><strong>Image: </strong><img src="<?= $_forecast->img_src ?>">
             <br><strong>Info: </strong><span>Photographie prise en sol <strong><?= $_forecast->sol ?></strong> (approximativement le <strong><?= Date('d/m/Y', strtotime($date)) ?></strong>) à l'aide de la caméra <strong><?= $_forecast->camera->name ?></strong>.</span>
         </div>
+        <?php } ?>
     <?php endforeach; } ?>
 </body>
 </html>
