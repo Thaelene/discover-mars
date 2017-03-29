@@ -24,12 +24,12 @@
         &.anim-menu
         {
             transform: translate(0);
-            transition: transform 0.2s ease-in-out
+            transition: transform 1s ease-in-out
         }
         &.anim-quit
         {
             transform: translate(-100%);
-            transition: transform 0.2s ease-in-out
+            transition: transform 1s ease-in-out
         }
 
         .menu-box

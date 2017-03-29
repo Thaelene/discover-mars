@@ -21,8 +21,10 @@
 <header>
     <nav>
         <div class="logo">
-            <img src="<?= URL ?>assets/img/logo.png" alt="logo">
+            <a href="dashboard">
+                <img src="<?= URL ?>assets/img/logo.png" alt="logo">
+            </a>
         </div>
-        <button type="button" class="menuButton" name="button">MENU</button>
+        <button type="button" class="menuButton" name="button">ABOUT</button>
     </nav>
 </header>
