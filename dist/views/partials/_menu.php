@@ -20,7 +20,9 @@
 
 <header>
     <nav>
-        <img src="<?= URL ?>assets/img/logo.png" alt="logo">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+        <div class="logo">
+            <img src="<?= URL ?>assets/img/logo.png" alt="logo">
+        </div>
+        <button type="button" name="button">MENU</button>
     </nav>
 </header>

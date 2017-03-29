@@ -83,18 +83,24 @@
         padding: 2em;
         nav
         {
-            img
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+
+            .logo
             {
-                max-width: 100%;
+                img
+                {
+                    max-width: 100%;
+                }
             }
-            i
+            button
             {
-                font-size: 25px;
-                margin: 10em 0;
-                display: flex;
-                justify-content: center;
-                color: $main-color;
-                cursor: pointer;
+                margin : auto;
+                font-size: 10px;
+                color : $main-color;
+                font-weight: 600;
             }
         }
     }

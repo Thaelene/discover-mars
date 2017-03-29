@@ -2,7 +2,7 @@
 
     <?php include 'views/partials/_menu.php' ?>
 
-    <section class="container">
+    <section>
         <div id="marsloc"></div>
         <div class="informations">
             <div class="info info-title">
