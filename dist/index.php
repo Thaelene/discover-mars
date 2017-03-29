@@ -1,5 +1,5 @@
 <?php
-
+include 'include/keys.php';
 include 'include/handle.php';
 include 'include/config.php';
 
