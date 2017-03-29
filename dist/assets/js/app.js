@@ -79,6 +79,8 @@ container_mars.add(marsMesh)
 // Call the controls library
 let controls = new THREE.OrbitControls(camera, renderer.domElement)
 controls.addEventListener('change', render)
+controls.minDistance = 180;
+controls.maxDistance = 350;
 
 let clock = new THREE.Clock()
 
@@ -130,3 +132,25 @@ function onWindowResize(){
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth -130, window.innerHeight);
 };
+
+
+// DISABLE ZOOM
+
+function load(){
+  marsloc.addEventListener("wheel", zoomShortcut); //add the event
+}
+
+function zoomShortcut(e){
+  if(e.ctrlKey){            //[ctrl] pressed?
+    event.preventDefault();  //prevent zoom
+    if(e.deltaY<0){        //scrolling up?
+                            //do something..
+      return false;
+    }
+    if(e.deltaY>0){        //scrolling down?
+                            //do something..
+      return false;
+    }
+  }
+}
+load();
