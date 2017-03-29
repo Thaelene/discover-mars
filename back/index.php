@@ -18,7 +18,6 @@
             <option <?php if ($camera == "") { ?>selected<?php } ?> value="">All</option>
             <option <?php if ($camera == "FHAZ") { ?>selected<?php } ?> value="FHAZ">FHAZ</option>
             <option <?php if ($camera == "RHAZ") { ?>selected<?php } ?> value="RHAZ">RHAZ</option>
-            <option <?php if ($camera == "MAST") { ?>selected<?php } ?> value="MAST">MAST</option>
             <option <?php if ($camera == "NAVCAM") { ?>selected<?php } ?> value="NAVCAM">NAVCAM</option>
         </select>
         <input type="submit">
@@ -38,12 +37,12 @@
             <br><strong>Pression (descriptif) : </strong><span><?= $_forecast->pressure_string ?></span>
             <br><strong>Opacité de l'atmosphère : </strong><span><?= $_forecast->atmo_opacity ?></span>
             <br><strong>Lever du soleil : </strong><span><?= substr($_forecast->sunrise, 11, -4) ?></span> <!-- Formate this element for a better readability -->
-            <br><strong>Coucher du soleil : </strong><span><?= substr($_forecast->sunset, 11, -4) ?></span>
+            <br><strong>Coucher du soleil : </strong><span><?= substr($_forecast->sunset, 11, -4) ?></span> <!-- Formate this element for a better readability -->
         </div>
     <?php endforeach; ?>
 
     <?php foreach ($forecast_photo->photos as $_forecast): ?> <!-- Display each photo infos -->
-        <?php if (($_forecast->camera->name == $camera) || ($camera == "")) { ?>
+        <?php if (($_forecast->camera->name == $camera) || (($_forecast->camera->name == $camera[0]) || ($_forecast->camera->name == $camera[1]) || ($_forecast->camera->name == $camera[2]))) { ?>
         <div>
             <br><strong>Image: </strong><img src="<?= $_forecast->img_src ?>">
             <br><strong>Info: </strong><span>Photographie prise en sol <strong><?= $_forecast->sol ?></strong> (approximativement le <strong><?= Date('d/m/Y', strtotime($date)) ?></strong>) à l'aide de la caméra <strong><?= $_forecast->camera->name ?></strong>.</span>
