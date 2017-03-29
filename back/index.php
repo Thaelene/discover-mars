@@ -22,6 +22,8 @@
         </select>
         <input type="submit">
     </form>
+    
+    <a href="page.php">Page différente</a>
 
     <p class="error"><?= array_key_exists('date', $error_messages) ? $error_messages['date'] : '' ?></p> <!-- Error messages when date is wrong -->
 
