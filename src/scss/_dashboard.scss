@@ -2,8 +2,11 @@
 .container-dashboard
 {
     display: flex;
-    #marsloc {
+
+    #marsloc
+    {
       cursor: grab;
+      height: 100vh;
     }
 
     // MENU STYLE
@@ -63,7 +66,6 @@
         }
         .menu-quit
         {
-            border-right: solid thin $line-color;
             width: 130px;
             display: flex;
             justify-content: center;
@@ -75,7 +77,6 @@
     {
         width: 130px;
         height: 100vh;
-        border-right : solid thin $line-color;
         padding: 20px;
         nav
         {
@@ -103,7 +104,7 @@
     section
     {
         width: 100vw;
-        height: 100vh;
+        border-left: solid thin $line-color;
 
         #marsloc
         {

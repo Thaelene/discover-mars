@@ -2,12 +2,18 @@
 
 .container
 {
+    border-left : solid thin $line-color;
+
     .gallery-info
     {
         .back
         {
             display: flex;
             align-items: center;
+            font-size: 10px;
+            color : $main-color;
+            font-weight: 600;
+            cursor: pointer;
 
             i { padding-right: 10px; }
         }
@@ -23,11 +29,11 @@
 
             select
             {
-                border-bottom: solid thin $main-color;
                 height: 20px;
                 margin: 0 10px;
                 cursor: pointer;
                 appearance : menulist;
+                border-bottom: solid thin $main-color;
             }
             p
             {
