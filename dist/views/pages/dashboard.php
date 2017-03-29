@@ -16,7 +16,7 @@
                 </div>
                 <form action="#" method="get">
                     <input type="date" name="date" value="<?= $date ?>" required name="date"> <!-- Select the date -->
-                    <input type="submit">
+                    <input type="submit" value="SUBMIT">
                 </form>
                 <!-- <span><?= Date('d/m/Y', strtotime($date)) ?></span> -->
             </div>
@@ -30,9 +30,9 @@
                 </div>
                 <div class="info-bloc-content">
                     <p>Sol : <span><?= $_forecast->sol ?></span></p>
-                    <p>Minimal temperature : <span><?= $_forecast->min_temp ?></span></p>
-                    <p>Maximal temperature : <span><?= $_forecast->max_temp ?></span></p>
-                    <p>Pression : <span><?= $_forecast->pressure ?></span></p>
+                    <p>Minimal temperature : <span><?= $_forecast->min_temp ?></span>° C</p>
+                    <p>Maximal temperature : <span><?= $_forecast->max_temp ?></span>° C</p>
+                    <p>Pression : <span><?= $_forecast->pressure ?></span> hpa</p>
                     <p>Type of pressure : <span><?= $_forecast->pressure_string ?></span></p>
                     <p>Atmosphere opacity : <span><?= $_forecast->atmo_opacity ?></span></p>
                     <p>Sunrise : <span><?= substr($_forecast->sunrise, 11, -4) ?></span></p>
@@ -40,8 +40,14 @@
                 </div>
             <?php endforeach; }?>
             </div>
-
-            <div><a href="gallery" class="button">CHECK THE GALLERY</a></div>
+            <?php echo '<pre>';
+            print_r($error_messages);
+            echo '</pre>'; ?>
+            <?php if (!empty($error_messages['date'])) { ?>
+                <div>
+                    <a href="gallery" class="button button-gallery">CHECK THE GALLERY</a>
+                </div>
+            <?php } ?>
         </div>
     </section>
 </div>

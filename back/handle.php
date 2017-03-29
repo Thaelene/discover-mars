@@ -17,7 +17,6 @@ if(!empty($_GET['date'])) {
         $error_messages['date'] = "The date must be posterior of the launch of all features of Curiosity.";
     }
 }
-
 // If they are no errors
 if(empty($error_messages)) {
 
@@ -25,12 +24,12 @@ if(empty($error_messages)) {
   Request the photo API
  -----------------------*/
     $url_photo = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='.$date.'&api_key=mAf0G7pDruydaGbfRmtxAIVNUCaRWRttre1z2RZB';
-    $path_photo = './cache/photo/'.md5($date); // Name of the file : searched date, hached    
-    
+    $path_photo = './cache/photo/'.md5($date); // Name of the file : searched date, hached
+
     // Analyse if the data is in the cache
     if(file_exists($path_photo)) {
         $forecast_photo = file_get_contents($path_photo);
-        
+
         // If they are no photo
         if($forecast_photo == '{"errors":"No Photos Found"}') {
             $error_messages['date'] = "Aucune information n'a pu être récupérée à cette date";
@@ -42,7 +41,7 @@ if(empty($error_messages)) {
         // Verify if they are content
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url_photo);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); 
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $forecast_photo = curl_exec($curl);
 
         if($forecast_photo === '{"errors":"No Photos Found"}') {
@@ -50,7 +49,7 @@ if(empty($error_messages)) {
         }
 
         file_put_contents($path_photo, $forecast_photo); // Create file in cache
-        
+
         curl_close($curl);
     }
 
@@ -80,5 +79,5 @@ if(empty($error_messages)) {
 
     // Convert in object
     $forecast_info = json_decode($forecast_info);
-    
+
 }

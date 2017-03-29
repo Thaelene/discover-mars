@@ -142,6 +142,26 @@
         {
             float: right;
         }
+        form
+        {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            input[type="date"]
+            {
+                height: 20px;
+                border-bottom: thin solid $main-color;
+                margin: 0 20px
+            }
+            input[type="submit"]
+            {
+                font-size: 10px;
+                color : $main-color;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
     }
 }
 
