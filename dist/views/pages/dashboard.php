@@ -14,7 +14,11 @@
                     <h2>Date</h2>
                     <div class="border border-small"></div>
                 </div>
-                <p><?= Date('d/m/Y', strtotime($date)) ?></p>
+                <form action="#" method="get">
+                    <input type="date" name="date" value="<?= $date ?>" required name="date"> <!-- Select the date -->
+                    <input type="submit">
+                </form>
+                <!-- <span><?= Date('d/m/Y', strtotime($date)) ?></span> -->
             </div>
             <p class="error"><?= array_key_exists('date', $error_messages) ? $error_messages['date'] : '' ?></p>
 
