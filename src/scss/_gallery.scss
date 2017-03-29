@@ -1,14 +1,38 @@
 .container
 {
+    .gallery-title
+    {
+        text-align: right;
+    }
     .back
     {
         display: flex;
-        align-items: top;
-
+        align-items: center;
         i
         {
             padding-right: 10px;
         }
+    }
+
+    .container-image
+    {
+
+        .image-card
+        {
+            margin : 0 auto 10em auto;
+            width: 70%;
+
+            .image
+            {
+                padding: 2em 0;
+                img
+                {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
 
     }
 }
