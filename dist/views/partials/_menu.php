@@ -1,4 +1,7 @@
 <div class="menu">
+    <div class="menu-quit">
+        <button type="button" class="menuQuit" name="button">QUIT</button>
+    </div>
     <div class="menu-box container">
         <img src="<?= URL ?>assets/img/logo2.png" alt="logo">
         <h3>Brief about the red planet</h3>
@@ -13,9 +16,6 @@
             <a href="#">TWITTER</a><a href="#">FACEBOOK</a>
         </div>
     </div>
-    <div class="menu-quit">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
 </div>
 
 <header>
@@ -23,6 +23,6 @@
         <div class="logo">
             <img src="<?= URL ?>assets/img/logo.png" alt="logo">
         </div>
-        <button type="button" name="button">MENU</button>
+        <button type="button" class="menuButton" name="button">MENU</button>
     </nav>
 </header>

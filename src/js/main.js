@@ -1,5 +1,5 @@
-var menu = document.querySelector('.fa-bars');
-var quit = document.querySelector('.fa-times');
+var menu = document.querySelector('.menuButton');
+var quit = document.querySelector('.menuQuit');
 
 var menuBox = document.querySelector('.menu');
 

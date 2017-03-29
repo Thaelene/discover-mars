@@ -2,7 +2,7 @@
     <?php include 'views/partials/_menu.php' ?>
 
     <section class="container">
-        <div class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i><a href="dashboard">QUIT GALLERY</a></div>
+        <a href="dashboard"><i class="fa fa-chevron-left" aria-hidden="true"></i>QUIT GALLERY</a>
 
         <!-- <div class="informations">
             <div class="info info-title">
@@ -17,6 +17,27 @@
                 <p>Thursday, March 3th 2017</p>
             </div>
         </div> -->
+        <div class="container-image">
+            <div class="image">
+                <img src="assets/img/logo.png" alt="#">
+            </div>
+            <div class="image">
+                <img src="assets/img/logo.png" alt="#">
+            </div>
+            <div class="image">
+                <img src="assets/img/logo.png" alt="#">
+            </div>
+            <div class="image">
+                <img src="assets/img/logo.png" alt="#">
+            </div>
+            <div class="image">
+                <img src="assets/img/logo.png" alt="#">
+            </div>
+            <div class="image">
+                <img src="assets/img/logo.png" alt="#">
+            </div>
+        </div>
+
 
     </section>
 </div>
