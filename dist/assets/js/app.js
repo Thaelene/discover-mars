@@ -1,3 +1,4 @@
+// WEBGL MARS
 var renderer = new THREE.WebGLRenderer({
     antialiasing : true
 });
@@ -12,6 +13,7 @@ camera.position.z = 1
 camera.target = new THREE.Vector3(0.2, 0, 0)
 camera.position.set(200, 0, 0)
 
+// Set lights
 var light = new THREE.AmbientLight( 0x222222 )
 scene.add( light )
 
@@ -34,7 +36,7 @@ light.shadowDarkness	= 0.2
 light.shadowMapWidth	= 1024
 light.shadowMapHeight	= 1024
 
-
+// Init stars
 createStarfield = function ()
 {
     var texture	= THREE.ImageUtils.loadTexture('assets/img/galaxy_starfield.png');
@@ -47,9 +49,12 @@ createStarfield = function ()
 	return mesh
 };
 
+// Add stars
 var starSphere = createStarfield()
 scene.add(starSphere)
 
+
+// Init Mars
 createMars = function()
 {
     var geometry	= new THREE.SphereGeometry(60, 80, 80);
@@ -62,6 +67,7 @@ createMars = function()
 	return mesh
 };
 
+// Add Mars
 var container_mars = new THREE.Object3D();
 container_mars.rotateZ(-23.4 * Math.PI/180);
 container_mars.position.z	= 0
@@ -70,11 +76,13 @@ scene.add(container_mars)
 var marsMesh = createMars()
 container_mars.add(marsMesh)
 
+// Call the controls library
 let controls = new THREE.OrbitControls(camera, renderer.domElement)
 controls.addEventListener('change', render)
 
 let clock = new THREE.Clock()
 
+// Animate both stars and Mars
 function animate(){
   requestAnimationFrame(animate)
   controls.update();
@@ -91,7 +99,7 @@ function render(){
 
 animate();
 
-
+// Set grab cursor
 marsloc.addEventListener('mousedown', function() {
   marsloc.style.cursor = "-moz-grabbing";
   marsloc.style.cursor = "-webkit-grabbing";
@@ -106,6 +114,7 @@ marsloc.addEventListener('mouseup', function() {
 
 window.addEventListener( 'resize', onWindowResize, false );
 
+// Responsive 
 function onWindowResize(){
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
