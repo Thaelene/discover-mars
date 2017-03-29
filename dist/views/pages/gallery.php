@@ -24,16 +24,24 @@
                     <p><?= date("l, t, Y", strtotime($date)); ?></p>
                 </div>
             </div>
-            <form action="#" method="get" class="gallery-views">
-                <label for="choose-camera">CHOOSE YOUR VIEW :</label>
-                <select name="choose-camera" id="choose-camera" size="1"> <!-- Select the camera and display active camera in the button -->
-                    <option <?php if ($camera == "") { ?>selected<?php } ?> value="">All</option>
-                    <option <?php if ($camera == "FHAZ") { ?>selected<?php } ?> value="FHAZ">FHAZ</option>
-                    <option <?php if ($camera == "RHAZ") { ?>selected<?php } ?> value="RHAZ">RHAZ</option>
-                    <option <?php if ($camera == "NAVCAM") { ?>selected<?php } ?> value="NAVCAM">NAVCAM</option>
-                </select>
-                <input type="submit" value="Submit">
-            </form>
+            <div class="gallery-choose">
+                <form action="#" method="get" class="gallery-views">
+                    <div class="choose-camera">
+                        <label for="choose-camera">CHOOSE YOUR VIEW :</label>
+                        <select name="choose-camera" id="choose-camera" size="1"> <!-- Select the camera and display active camera in the button -->
+                            <option <?php if ($camera == "") { ?>selected<?php } ?> value="">All</option>
+                            <option <?php if ($camera == "FHAZ") { ?>selected<?php } ?> value="FHAZ">FHAZ</option>
+                            <option <?php if ($camera == "RHAZ") { ?>selected<?php } ?> value="RHAZ">RHAZ</option>
+                            <option <?php if ($camera == "NAVCAM") { ?>selected<?php } ?> value="NAVCAM">NAVCAM</option>
+                        </select>
+                    </div>
+                    <div class="choose-date">
+                        <label for="choose-date">CHOOSE THE DATE : </label>
+                        <input type="date" name="choose-date" value="<?= $date ?>" required id="choose-date">
+                    </div>
+                    <input type="submit" value="SUBMIT">
+                </form>
+            </div>
         </div>
 
 <!-- GALLERY IMAGES -->

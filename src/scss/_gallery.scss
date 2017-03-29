@@ -8,7 +8,7 @@
     {
         height: 100%;
     }
-    
+
     .gallery-info
     {
         .back
@@ -26,26 +26,54 @@
         {
             text-align: right;
         }
-        .gallery-views
+        .gallery-choose
         {
             display: flex;
-            align-items: flex-end;
-            margin-bottom: 2em;
+            height: 7em;
+            align-items: center;
 
-            select
+            .gallery-views
             {
-                height: 20px;
-                margin: 0 10px;
-                cursor: pointer;
-                appearance : menulist;
-                border-bottom: solid thin $main-color;
+                display: flex;
+                width: 50%;
+                justify-content: space-between;
+                align-items: center;
+
+                .choose-camera
+                {
+
+                    select
+                    {
+                        height: 20px;
+                        margin: 0 10px;
+                        cursor: pointer;
+                        border-bottom: solid thin $main-color;
+                    }
+                    p
+                    {
+                        font-size: 12px;
+                        font-weight: 600;
+                    }
+                }
+                .choose-date
+                {
+                    input
+                    {
+                        height: 20px;
+                        border-bottom: thin solid $main-color;
+                    }
+                }
+                input[type="submit"]
+                {
+                    font-size: 10px;
+                    color : $main-color;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
             }
-            p
-            {
-                font-size: 12px;
-                font-weight: 600;
-            }
+
         }
+
     }
 
 // STYLE FOR CONTAINER-IMAGES
