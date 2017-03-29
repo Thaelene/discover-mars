@@ -83,33 +83,43 @@ controls.addEventListener('change', render)
 let clock = new THREE.Clock()
 
 // Animate both stars and Mars
-function animate(){
+function render()
+{
+    var delta = clock.getDelta()
+    starSphere.rotation.y += 0.1 * delta;
+    renderer.clear()
+    renderer.render(scene, camera)
+    if (!marsloc.classList.contains('grabbing'))
+    {
+        marsMesh.rotation.y += 0.1 * delta;
+    }
+}
+
+function animate()
+{
   requestAnimationFrame(animate)
   controls.update();
   render()
 };
 
-function render(){
-   var delta = clock.getDelta()
-   marsMesh.rotation.y += 0.1 * delta;
-   starSphere.rotation.y += 0.1 * delta;
-   renderer.clear()
-   renderer.render(scene, camera)
-};
+animate()
 
-animate();
 
 // Set grab cursor
-marsloc.addEventListener('mousedown', function() {
+marsloc.addEventListener('mousedown', function()
+{
   marsloc.style.cursor = "-moz-grabbing";
   marsloc.style.cursor = "-webkit-grabbing";
   marsloc.style.cursor = "grabbing";
+  marsloc.className += " grabbing";
 });
 
-marsloc.addEventListener('mouseup', function() {
+marsloc.addEventListener('mouseup', function()
+{
   marsloc.style.cursor = "-moz-grab";
   marsloc.style.cursor = "-webkit-grab";
   marsloc.style.cursor = "grab";
+  marsloc.className -= "grabbing"
 });
 
 window.addEventListener( 'resize', onWindowResize, false );
