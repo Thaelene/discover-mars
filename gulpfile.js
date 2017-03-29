@@ -89,7 +89,7 @@ gulp.task('imagemin', function()
 });
 
 // Watches files change and launches relatives tasks
-gulp.task( 'watch', ['sass', 'javascript', 'imagemin'], function()
+gulp.task( 'watch', ['sass', 'javascript'], function()
 {
     gulp.watch(config.src + 'scss/**/*.scss', ["sass"]);
     gulp.watch(config.src + 'js/main.js', ["javascript"]);

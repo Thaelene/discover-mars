@@ -29,10 +29,17 @@
     right: 10%;
     top: 20%;
     animation: anim-text 2s 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30%;
 
-    .introduce-text
+    .introduce-content
     {
-        padding: 2em 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 40%;
     }
 }
 @keyframes anim-text
