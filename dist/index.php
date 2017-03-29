@@ -1,4 +1,6 @@
 <?php
+
+include 'include/handle.php';
 include 'include/config.php';
 
 // Routing

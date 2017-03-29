@@ -1,6 +1,4 @@
-<?php
-include 'handle.php';
-?>
+<?php include 'handle.php'; ?>
 
 
 
