@@ -2,6 +2,15 @@
 
     <?php include 'views/partials/_menu.php' ?>
 
+    <section class="loader-wrapper">
+        <div class="loader">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+            <div class="dot dot4"></div>
+        </div>
+    </section>
+
     <section>
         <div id="marsloc"></div>
         <div class="informations">

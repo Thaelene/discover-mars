@@ -10,4 +10,5 @@ curiosity.button.addEventListener('click', function()
 {
     curiosity.content.style.display = 'block';
     curiosity.home.classList += ' anim-container';
+    curiosity.content.style.overflow = 'hidden';
 });
