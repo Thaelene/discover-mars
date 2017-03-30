@@ -41,6 +41,25 @@ button
     font-weight: 600;
     cursor: pointer;
 }
+.button
+{
+    width: 150px;
+    height : 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius : 150px;
+    border : thin solid $main-color;
+    color: $main-color;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover
+    {
+        background-color: $main-color;
+        color: white;
+    }
+}
 
 // Typography
 
