@@ -1,80 +1,125 @@
-.rover
+.container-home
 {
-    position: absolute;
-    bottom: 0;
-    left: 5%;
-    animation: anim-rover 2s 1;
+    width : 100%;
+    height : 100%;
+    transition : transform 0.3s ease-in-out;
 
-    img
+    &.anim-container
     {
-        width: 50vw;
+        transform : translateY(-100%);
     }
-}
-@keyframes anim-rover
-{
-    0%
-    {
-        left: -50%;
-    }
-    100%
-    {
-        left: 5%;
-    }
-}
 
-.introduce
-{
-    max-width: 400px;
-    position: absolute;
-    right: 10%;
-    top: 20%;
-    animation: anim-text 2s 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 30%;
-
-    .introduce-content
+    .landing-page
     {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 40%;
-    }
-}
-@keyframes anim-text
-{
-    0%
-    {
-        right: -50%;
-    }
-    100%
-    {
-        right: 10%;
-    }
-}
+        width : 100vw;
+        height : 100vh;
 
-.button
-{
-    width: 150px;
-    height : 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius : 150px;
-    border : thin solid $main-color;
-    color: $main-color;
-    font-weight: 600;
-    cursor: pointer;
+        .rover
+        {
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            animation: anim-rover 2s 1;
 
-    &:hover
-    {
-        background-color: $main-color;
-        color: white;
+            img
+            {
+                width: 50vw;
+            }
+        }
+        @keyframes anim-rover
+        {
+            0%
+            {
+                left: -50%;
+            }
+            100%
+            {
+                left: 5%;
+            }
+        }
+
+        .introduce
+        {
+            max-width: 400px;
+            position: absolute;
+            right: 10%;
+            top: 20%;
+            animation: anim-text 2s 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 30%;
+
+            .introduce-content
+            {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 40%;
+            }
+        }
+        @keyframes anim-text
+        {
+            0%
+            {
+                right: -50%;
+            }
+            100%
+            {
+                right: 10%;
+            }
+        }
+
+        .button
+        {
+            width: 150px;
+            height : 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius : 150px;
+            border : thin solid $main-color;
+            color: $main-color;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover
+            {
+                background-color: $main-color;
+                color: white;
+            }
+        }
     }
-}
 
-.learn-curiosity
-{
-    display: none;
+    .learn-curiosity
+    {
+        width : 100vw;
+        height : 100vh;
+        padding: 40px;
+        display: none;
+
+        .curiosity-content
+        {
+
+            .intro
+            {
+
+            }
+            .special
+            {
+
+            }
+        }
+
+        .curiosity-img
+        {
+            height: 70vh;
+
+            img
+            {
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
 }
