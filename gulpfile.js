@@ -79,6 +79,21 @@ gulp.task( 'javascript', function()
         .pipe( gulp.dest(config.assets + 'js' ) );
 } );
 
+// Uglify js file
+gulp.task( 'uglify', function()
+{
+    return gulp.src ( [
+        config.src + 'js/app.js',
+    ])
+    .pipe(gulp_plumber({
+        errorHandler: gulp_notify.onError("JS Error: <%= error.message %>")
+    }))
+    .pipe(gulp_sourcemaps.init())
+    .pipe( gulp_uglify() )
+    .pipe(gulp_sourcemaps.write())
+    .pipe( gulp.dest(config.assets + 'js' ) );
+})
+
 // Minifies images
 gulp.task('imagemin', function()
 {
