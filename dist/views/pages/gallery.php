@@ -62,7 +62,7 @@
                 <?php if (($_forecast->camera->name == $camera) || (($_forecast->camera->name == $camera[0]) || ($_forecast->camera->name == $camera[1]) || ($_forecast->camera->name == $camera[2]))) { ?>
             <div class="image-card">
                 <div class="image">
-                    <img src="<?= $_forecast->img_src ?>">
+                    <img src="<?= $_forecast->img_src ?>" data-action="zoom">
                 </div>
                 <p>Picture took on ground, around <span><?= Date('d/m/Y', strtotime($date)) ?></span> with the <span><?= $_forecast->camera->name ?></span> camera.</p>
             </div>
@@ -71,3 +71,4 @@
         </div>
     </section>
 </div>
+<script src="assets/js/zooming.js"></script>
