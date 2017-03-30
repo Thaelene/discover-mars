@@ -21,7 +21,7 @@
 <header>
     <nav>
         <div class="logo">
-            <a href="dashboard">
+            <a href="dashboard?date=<?=$date;?>">
                 <img src="<?= URL ?>assets/img/logo.png" alt="logo">
             </a>
         </div>

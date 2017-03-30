@@ -1,7 +1,23 @@
 <?php
-    // Fetch all photos by view
-//    $query = $pdo->query('SELECT * FROM `photo-view` ORDER BY `photo-view`.`views` DESC');
-//    $items = $query->fetchAll();
+$listImage = array();
+$listIdPhoto = array();
+
+foreach ($forecast_photo->photos as $_forecast) { 
+    if (($_forecast->camera->name == $camera) || (($_forecast->camera->name == $camera[0]) || ($_forecast->camera->name == $camera[1]) || ($_forecast->camera->name == $camera[2]))) {
+        $query = $pdo->query("SELECT * FROM `photo-view` WHERE name = '".$_forecast->img_src."'");
+        $items = $query->fetchAll();
+        foreach($items as $_items)
+        {
+            $listImage[$_items->name] = $_items->views;
+            $listIdPhoto[$_items->name] = $_items->id;
+            
+        }
+        
+    }
+}
+
+arsort($listImage);
+
 ?>
 
 
@@ -19,7 +35,7 @@
 
     <section class="container full">
         <div class="gallery-info">
-            <a href="dashboard" class="back">
+            <a href="dashboard?date=<?=$date;?>" class="back">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>QUIT GALLERY
             </a>
             <div class="gallery-title">
@@ -48,7 +64,7 @@
                     </div>
                     <div class="choose-date">
                         <label for="choose-date">CHOOSE THE DATE : </label>
-                        <input type="date" name="choose-date" value="<?= $date ?>" required id="choose-date">
+                        <input type="date" name="date" value="<?= $date ?>" required id="choose-date">
                     </div>
                     <input type="submit" value="SUBMIT">
                 </form>
@@ -58,17 +74,17 @@
 <!-- GALLERY IMAGES -->
 
         <div class="container-image">
-            <?php foreach ($forecast_photo->photos as $_forecast): ?> <!-- Display each photo infos -->
-                <?php if (($_forecast->camera->name == $camera) || (($_forecast->camera->name == $camera[0]) || ($_forecast->camera->name == $camera[1]) || ($_forecast->camera->name == $camera[2]))) { ?>
+        <?php foreach($listImage as $key => $valeur) : ?>
             <div class="image-card">
                 <div class="image">
-                    <img src="<?= $_forecast->img_src ?>" data-action="zoom">
+                    <img class="imagePhoto" data-photo="<?= $listIdPhoto[$key]?>" src="<?= $key ?>" data-action="zoom">
                 </div>
                 <p>Picture took on ground, around <span><?= Date('d/m/Y', strtotime($date)) ?></span> with the <span><?= $_forecast->camera->name ?></span> camera.</p>
             </div>
-            <?php } ?>
         <?php endforeach; ?>
         </div>
     </section>
 </div>
 <script src="assets/js/zooming.js"></script>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="assets/js/addView.js"></script>

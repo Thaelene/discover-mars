@@ -65,7 +65,7 @@ if(empty($error_messages)) {
             foreach ($forecast_photo->photos as $_forecast) {
                 
                 // Enter data in BDD
-                $prepare = $pdo->prepare("INSERT INTO `photo-view` (`id`, `name`, `views`) VALUES (NULL, :views, '0')");
+                $prepare = $pdo->prepare("INSERT IGNORE INTO `photo-view` (`id`, `name`, `views`) VALUES (NULL, :views, '0')");
                 $prepare->execute([':views' => $_forecast->img_src]);
 
                 // Close request BDD
