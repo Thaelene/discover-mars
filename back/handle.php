@@ -6,7 +6,6 @@ $camera = (isset($_GET['camera'])) ? $_GET['camera'] : ['FHAZ', 'RHAZ', 'NAVCAM'
 if ($camera == '') { $camera = ['FHAZ', 'RHAZ', 'NAVCAM']; };
 $error_messages = array();
 
-$_SESSION['date'] = (isset($_GET['date'])) ? $_GET['date'] : $_SESSION['date'];
 
 // Verify if curiosity was on Mars at the date to limit useless requests
 if(!empty($_GET['date'])) {
@@ -34,6 +33,11 @@ if(empty($error_messages)) {
         if($forecast_photo == '{"errors":"No Photos Found"}') {
             $error_messages['date'] = "Aucune information n'a pu être récupérée à cette date";
         }
+        
+        else {
+            // Convert in object
+            $forecast_photo = json_decode($forecast_photo);
+        }
     }
 
     // With API
@@ -47,14 +51,27 @@ if(empty($error_messages)) {
         if($forecast_photo === '{"errors":"No Photos Found"}') {
             $error_messages['date'] = "Aucune information n'a pu être récupérée à cette date";
         }
+        
+        else {
+            file_put_contents($path_photo, $forecast_photo); // Create file in cache
 
-        file_put_contents($path_photo, $forecast_photo); // Create file in cache
+            // Convert in object
+            $forecast_photo = json_decode($forecast_photo);
+
+            foreach ($forecast_photo->photos as $_forecast) {
+                
+                // Enter data in BDD
+                $prepare = $pdo->prepare("INSERT INTO `photo-view` (`id`, `name`, `views`) VALUES (NULL, :views, '0')");
+                $prepare->execute([':views' => $_forecast->img_src]);
+
+                // Close request BDD
+                $prepare->closeCursor();
+            }
+
+        }
 
         curl_close($curl);
     }
-
-    // Convert in object
-    $forecast_photo = json_decode($forecast_photo);
 
 
 /* -----------------------

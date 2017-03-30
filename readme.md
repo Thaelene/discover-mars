@@ -18,6 +18,7 @@ How to get started with the development environment running.
 ```
 sudo npm install
 ```
+* Install `discover-mars.sql` on your database
 
 * Do not forget to change the URL in the include/config.php
 

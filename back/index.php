@@ -1,4 +1,7 @@
-<?php include 'handle.php'; ?>
+<?php
+include 'config.php';
+include 'handle.php';
+?>
 
 
 
