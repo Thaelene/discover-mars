@@ -32,13 +32,13 @@
                         <h2>Date</h2>
                         <div class="border border-small"></div>
                     </div>
-                    <p><?= date("l, t, Y", strtotime($date)); ?></p>
+                    <p><?= Date('d/m/Y', strtotime($date)) ?></p>
                 </div>
             </div>
             <div class="gallery-choose">
                 <form action="#" method="get" class="gallery-views">
                     <div class="choose-camera">
-                        <label for="choose-camera">CHOOSE YOUR VIEW :</label>
+                        <label for="choose-camera">CHOOSE YOUR CAMERA VIEW :</label>
                         <select name="choose-camera" id="choose-camera" size="1"> <!-- Select the camera and display active camera in the button -->
                             <option <?php if ($camera == "") { ?>selected<?php } ?> value="">All</option>
                             <option <?php if ($camera == "FHAZ") { ?>selected<?php } ?> value="FHAZ">FHAZ</option>
@@ -64,7 +64,7 @@
                 <div class="image">
                     <img src="<?= $_forecast->img_src ?>">
                 </div>
-                <p>Picture took the <span><?= $_forecast->sol ?></span> day on ground, (around <span><?= Date('d/m/Y', strtotime($date)) ?></span>) with the <span><?= $_forecast->camera->name ?></span> camera.</p>
+                <p>Picture took on ground, around <span><?= Date('d/m/Y', strtotime($date)) ?></span> with the <span><?= $_forecast->camera->name ?></span> camera.</p>
             </div>
             <?php } ?>
         <?php endforeach; ?>

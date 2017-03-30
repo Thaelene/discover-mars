@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div>
-                <a href="gallery" class="button button-gallery">CHECK THE GALLERY</a>
+                <a href="gallery" class="button button-gallery">PHOTOS OF THE DAY</a>
             </div>
             <?php endforeach; } ?>
 
