@@ -20,7 +20,7 @@
                 </form>
                 <!-- <span><?= Date('d/m/Y', strtotime($date)) ?></span> -->
             </div>
-            <p class="error"><?= array_key_exists('date', $error_messages) ? $error_messages['date'] : '' ?></p>
+            <p class="error"><?= array_key_exists('date', $error_messages) ? $error_messages['date'] : '' ?></p> <!-- Error messages when date is wrong -->
 
             <!--
             If $forecast_info->results is empty, which means that one this date, no data has been collected,

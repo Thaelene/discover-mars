@@ -1,3 +1,10 @@
+<?php
+    // Fetch all photos by view
+//    $query = $pdo->query('SELECT * FROM `photo-view` ORDER BY `photo-view`.`views` DESC');
+//    $items = $query->fetchAll();
+?>
+
+
 <div class="container-dashboard">
 
 <!-- INCLUDE HEADER -->
