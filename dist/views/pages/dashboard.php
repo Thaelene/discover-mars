@@ -22,8 +22,16 @@
             </div>
             <p class="error"><?= array_key_exists('date', $error_messages) ? $error_messages['date'] : '' ?></p>
 
+            <!--
+            If $forecast_info->results is empty, which means that one this date, no data has been collected,
+            then show the error notice.
+            Otherwise show data found
+            -->
+            <?php if (empty($forecast_info->results)){ ?>
+                <p>No information has been collected on this day, please choose another one</p>
+            <?php }
+            elseif(empty($error_messages)) { foreach ($forecast_info->results as $_forecast): ?>
             <div class="info-bloc">
-                <?php if(empty($error_messages)) { foreach ($forecast_info->results as $_forecast): ?>
                 <div class="info info-rover">
                     <h2>Informations</h2>
                     <div class="border border-small"></div>
@@ -38,16 +46,12 @@
                     <p>Sunrise : <span><?= substr($_forecast->sunrise, 11, -4) ?></span></p>
                     <p>Sunset : <span><?= substr($_forecast->sunset, 11, -4) ?></span></p>
                 </div>
-            <?php endforeach; }?>
             </div>
-            <?php echo '<pre>';
-            print_r($error_messages);
-            echo '</pre>'; ?>
-            <?php if (!empty($error_messages['date'])) { ?>
-                <div>
-                    <a href="gallery" class="button button-gallery">CHECK THE GALLERY</a>
-                </div>
-            <?php } ?>
+            <div>
+                <a href="gallery" class="button button-gallery">CHECK THE GALLERY</a>
+            </div>
+            <?php endforeach; } ?>
+
         </div>
     </section>
 </div>
