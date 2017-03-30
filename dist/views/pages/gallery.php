@@ -4,7 +4,7 @@ if (!empty($forecast_photo->photos)) {
     $listImage = array();
     $listIdPhoto = array();
 
-    foreach ($forecast_photo->photos as $_forecast) { 
+    foreach ($forecast_photo->photos as $_forecast) {
         if (($_forecast->camera->name == $camera) || (($_forecast->camera->name == $camera[0]) || ($_forecast->camera->name == $camera[1]) || ($_forecast->camera->name == $camera[2]) || ($_forecast->camera->name == $camera[3]))) {
             $query = $pdo->query("SELECT * FROM `photo-view` WHERE name = '".$_forecast->img_src."'");
             $items = $query->fetchAll();
@@ -51,6 +51,10 @@ if (!empty($forecast_photo->photos)) {
                         <div class="border border-small"></div>
                     </div>
                     <p><?= Date('d/m/Y', strtotime($date)) ?></p>
+                    <a class="twitter-share-button" href="https://twitter.com/share" data-size="small" data-text="Admire Mars' photographies taken by Curiosity" data-url="http://discovermars.space/gallery?camera=<?=$camera?>&date=<?=$date?>" data-hashtags="space,mars,curiosity" data-related="space,mars,robot,photo,curiosity">
+                        Tweet
+                    </a>
+
                 </div>
             </div>
             <div class="gallery-choose">
@@ -97,6 +101,7 @@ if (!empty($forecast_photo->photos)) {
         </div>
     </section>
 </div>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script src="assets/js/zooming.js"></script>
 <script src="https://code.jquery.com/jquery.min.js"></script>
 <script src="assets/js/addView.js"></script>
