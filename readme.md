@@ -19,7 +19,7 @@ sudo npm install
 ```
 * Install `discover-mars.sql` on your database
 
-* Do not forget to change the URL in the include/config.php
+* Edit config in `include/config.php` (you can find your api key [here](https://api.nasa.gov/))
 
 * And you are good to go !
 
