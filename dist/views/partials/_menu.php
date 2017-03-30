@@ -1,3 +1,16 @@
+<!-- SIDE-BAR -->
+<header>
+    <nav>
+        <div class="logo">
+            <a href="dashboard">
+                <img src="<?= URL ?>assets/img/logo.png" alt="logo">
+            </a>
+        </div>
+        <button type="button" class="menuButton" name="button">ABOUT</button>
+    </nav>
+</header>
+
+<!-- MENU OPEN -->
 <div class="menu">
     <div class="menu-quit">
         <button type="button" class="menuQuit" name="button">QUIT</button>
@@ -17,14 +30,3 @@
         </div>
     </div>
 </div>
-
-<header>
-    <nav>
-        <div class="logo">
-            <a href="dashboard">
-                <img src="<?= URL ?>assets/img/logo.png" alt="logo">
-            </a>
-        </div>
-        <button type="button" class="menuButton" name="button">ABOUT</button>
-    </nav>
-</header>

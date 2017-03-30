@@ -1,3 +1,4 @@
+// CREATE EVERY NEEDED VARIABLES
 var curiosity = {};
     curiosity.home = document.querySelector('.container-home'),
         curiosity.button = curiosity.home.querySelector('.curiosityButton');
@@ -5,8 +6,7 @@ var curiosity = {};
         curiosity.img = curiosity.home.querySelector('.curiosity-img');
 
 
-// Event on click to show more about Curiosity
-
+// EVENT ON CLICK TO SHOW MORE INFORMATIONS
 curiosity.button.addEventListener('click', function()
 {
     curiosity.content.style.display = 'block';

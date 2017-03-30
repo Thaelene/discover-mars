@@ -1,4 +1,6 @@
 <div class="container-home">
+
+<!-- FIRST VIEW ON LANDING PAGE -->
     <div class="landing-page">
         <div class="rover">
             <img src="assets/img/rover.png" alt="rover">
@@ -17,6 +19,8 @@
             <button type="button"class="button curiosityButton" name="button">LEARN NOW !</button>
         </div>
     </div>
+
+<!-- SECOND VIEW ON LANDING PAGE -->
     <div class="learn-curiosity curiosity-container" id="learn-curiosity">
         <div class="curiosity-first">
             <div class="curiosity-content">
@@ -51,5 +55,7 @@
             <a href="dashboard" class="button">START EXPERIENCE</a>
         </div>
     </div>
+
 </div>
+
 <script type="text/javascript" src="assets/js/curiosity.js"></script>

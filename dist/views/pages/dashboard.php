@@ -1,7 +1,8 @@
 <div class="container-dashboard">
-
+<!-- INCLUDE SIDEBAR -->
     <?php include 'views/partials/_menu.php' ?>
 
+<!-- DASHBOARD LOADER -->
     <section class="loader-wrapper">
         <div class="loader">
             <div class="dot dot1"></div>
@@ -11,6 +12,7 @@
         </div>
     </section>
 
+<!-- DASHBOARD  -->
     <section>
         <div id="marsloc"></div>
         <div class="informations">
@@ -27,7 +29,6 @@
                     <input type="date" name="date" value="<?= $date ?>" required name="date"> <!-- Select the date -->
                     <input type="submit" value="SUBMIT">
                 </form>
-                <!-- <span><?= Date('d/m/Y', strtotime($date)) ?></span> -->
             </div>
             <p class="error"><?= array_key_exists('date', $error_messages) ? $error_messages['date'] : '' ?></p> <!-- Error messages when date is wrong -->
 
@@ -60,10 +61,10 @@
                 <a href="gallery" class="button button-gallery">PHOTOS OF THE DAY</a>
             </div>
             <?php endforeach; } ?>
-
         </div>
     </section>
 </div>
+
 <script src='<?= URL ?>assets/js/three.min.js'></script>
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/orbitcontrols.js'></script>
 <script src="<?= URL ?>assets/js/app.js"></script>

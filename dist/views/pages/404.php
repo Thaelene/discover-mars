@@ -1,3 +1,4 @@
+<!-- HTML OF 404 PAGE -->
 <div class="error-pages">
     <div class="error-container">
         <div class="error-box">
