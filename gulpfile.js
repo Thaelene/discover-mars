@@ -83,7 +83,8 @@ gulp.task( 'javascript', function()
 gulp.task( 'uglify', function()
 {
     return gulp.src ( [
-        config.src + 'js/app.js',
+        config.src + 'js/curiosity.js',
+        config.src + 'js/sidebar.js',
     ])
     .pipe(gulp_plumber({
         errorHandler: gulp_notify.onError("JS Error: <%= error.message %>")
