@@ -31,7 +31,6 @@ a
 {
     text-decoration: none;
     color : inherit;
-
 }
 
 button
@@ -40,6 +39,8 @@ button
     color : $main-color;
     font-weight: 600;
     cursor: pointer;
+    width: 50%;
+    height: 50%;
 }
 .button
 {
@@ -79,7 +80,7 @@ h2,h3
 h2
 {
     font-size: 24px;
-    height: 25px;
+    height: 30px;
 }
 h3
 {

@@ -2,12 +2,14 @@
 {
     width : 100%;
     height : 100%;
-    transition : transform 0.3s ease-in-out;
+    transition : transform 1s ease-in-out;
 
     &.anim-container
     {
         transform : translateY(-100%);
     }
+
+// LANDING PAGE STYLE
 
     .landing-page
     {
@@ -19,7 +21,7 @@
             position: absolute;
             bottom: 0;
             left: 5%;
-            animation: anim-rover 2s 1;
+            animation: anim-rover 1s 1;
 
             img
             {
@@ -40,11 +42,11 @@
 
         .introduce
         {
-            max-width: 400px;
+            max-width: 50%;
             position: absolute;
             right: 10%;
             top: 20%;
-            animation: anim-text 2s 1;
+            animation: anim-text 1s 1;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -71,6 +73,8 @@
         }
     }
 
+// SEE MORE VIEWS
+
     .learn-curiosity
     {
         width : 100vw;
@@ -80,9 +84,6 @@
         &.curiosity-container
         {
             height: 100%;
-            // justify-content: center;
-            // display: flex;
-            // flex-direction: column;
         }
 
         .curiosity-first
@@ -95,15 +96,6 @@
                 flex-direction: column;
                 justify-content: space-around;
                 margin: 40px;
-
-                .intro
-                {
-
-                }
-                .special
-                {
-
-                }
             }
 
             .curiosity-img
@@ -125,7 +117,28 @@
             flex-direction: column;
             align-items: center;
             margin: auto;
+            will-change : transform;
 
+            &.anim-start
+            {
+                transform: translateY(100%);
+                animation: anim-start 0.7s cubic-bezier(0.42, 0, 0.5, 1.15) 1;
+                animation-delay: 1.2s;
+                animation-fill-mode: forwards;
+            }
+
+            @keyframes anim-start
+            {
+                0%
+                {
+                    transform: translateY(100%);
+                }
+
+                100%
+                {
+                    transform: translateY(0%);
+                }
+            }
             p
             {
                 margin: auto;

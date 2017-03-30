@@ -8,7 +8,6 @@ You will need to install
 * [Node.js](https://nodejs.org/en/download/)
 * MAMP or WAMP
 
-
 ### Installing
 
 How to get started with the development environment running.
@@ -25,6 +24,7 @@ sudo npm install
 * And you are good to go !
 
 ### Built with
-* WebGL
-* php
-* Nasa's API
+* [PHP] (https://secure.php.net/)
+* [Nasa's API] (https://api.nasa.gov/)
+* [Mars' API] (http://marsweather.ingenology.com/)
+* [Threejs] (https://threejs.org/)

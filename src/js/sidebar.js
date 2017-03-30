@@ -1,4 +1,4 @@
-// Create every needed variables
+// CREATE EVERY NEEDED VARIABLES
 
 var animation = {};
     animation.about  = document.querySelector('.menuButton'),
@@ -6,7 +6,7 @@ var animation = {};
     animation.box    = document.querySelector('.menu'),
     animation.isOpen = false;
 
-// Event on click to show/unshow sidebar
+// EVENT ON CLICK TO SHOW/UNSHOW MENU
 
 animation.about.addEventListener('click', function()
 {

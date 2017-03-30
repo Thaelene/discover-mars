@@ -1,4 +1,6 @@
 <div class="container-home">
+
+<!-- FIRST VIEW ON LANDING PAGE -->
     <div class="landing-page">
         <div class="rover">
             <img src="assets/img/rover.png" alt="rover">
@@ -7,7 +9,7 @@
             <div class="introduce-content">
                 <h2 class="home-title">Hello fellow terrians,</h2>
                 <p>
-                    Follow my moves on Mars and find many informations on the environment I pass by !
+                    Follow my moves on Mars and find many informations on the environment I passed by !
                 </p>
                 <p>
                     But first, maybe you want to know more about me.
@@ -17,6 +19,8 @@
             <button type="button"class="button curiosityButton" name="button">LEARN NOW !</button>
         </div>
     </div>
+
+<!-- SECOND VIEW ON LANDING PAGE -->
     <div class="learn-curiosity curiosity-container" id="learn-curiosity">
         <div class="curiosity-first">
             <div class="curiosity-content">
@@ -44,12 +48,14 @@
                 <img src="assets/img/curiosity1.png" alt="curiosity-rover">
             </div>
         </div>
-        <div class="curiosity-start">
+        <div class="curiosity-start anim-start">
             <p>
                 Now that you are ready, you can start exploring the red planet and know more about the progress of my mission
             </p>
             <a href="dashboard" class="button">START EXPERIENCE</a>
         </div>
     </div>
+
 </div>
+
 <script type="text/javascript" src="assets/js/curiosity.js"></script>

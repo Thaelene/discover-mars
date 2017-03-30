@@ -1,4 +1,3 @@
-
 .container-dashboard
 {
     display: flex;
@@ -177,19 +176,23 @@
 .border-small { width: 200px; }
 
 // LOADER CSS
-.loader-wrapper{
+
+.loader-wrapper
+{
     border: none;
     position: absolute;
     top: 30%;
 }
-.loader {
+.loader
+{
   font-size: 20px;
   position: relative;
   width: 4em;
   height: 1em;
   margin: 100px auto;
 }
-.dot {
+.dot
+{
   width: 1em;
   height: 1em;
   border-radius: 0.5em;
@@ -199,29 +202,25 @@
   animation-timing-function: ease;
   animation-iteration-count: infinite;
 }
-.dot1, .dot2 {
-  left: 0;
-}
+.dot1, .dot2 { left: 0; }
 .dot3 { left: 1.5em; }
-
 .dot4 { left: 3em; }
 
-@keyframes reveal {
+@keyframes reveal
+{
   from { transform: scale(0.001); }
   to { transform: scale(1); }
 }
 
-@keyframes slide {
+@keyframes slide
+{
   to { transform: translateX(1.5em) }
 }
 
-.dot1 {
-  animation-name: reveal;
-}
-.dot2, .dot3 {
-  animation-name: slide;
-}
-.dot4 {
+.dot1 { animation-name: reveal; }
+.dot2, .dot3 { animation-name: slide; }
+.dot4
+{
   animation-name: reveal;
   animation-direction: reverse;
 }

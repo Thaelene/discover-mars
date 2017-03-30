@@ -67,7 +67,8 @@ gulp.task('styles', function () {
 gulp.task( 'javascript', function()
 {
     return gulp.src( [
-            config.src + 'js/main.js'
+            config.src + 'js/main.js',
+            config.src + 'js/sidebar.js'
         ] )
         .pipe(gulp_plumber({
             errorHandler: gulp_notify.onError("JS Error: <%= error.message %>")
@@ -84,7 +85,6 @@ gulp.task( 'uglify', function()
 {
     return gulp.src ( [
         config.src + 'js/curiosity.js',
-        config.src + 'js/sidebar.js',
         config.src + 'js/zooming.js',
     ])
     .pipe(gulp_plumber({
