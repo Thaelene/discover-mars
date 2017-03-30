@@ -1,14 +1,16 @@
-var curiosity = {};
-    curiosity.home = document.querySelector('.container-home'),
-        curiosity.button = curiosity.home.querySelector('.curiosityButton');
-        curiosity.content = curiosity.home.querySelector('.learn-curiosity');
+// LOADER ON DASHBOARD PAGE
+var loader = document.querySelector('.loader-wrapper');
+document.addEventListener("DOMContentLoaded", function(event) {
+    function fadeOut(el){
+        el.style.opacity = 1;
 
-
-// Event on click to show more about Curiosity
-
-curiosity.button.addEventListener('click', function()
-{
-    curiosity.content.style.display = 'block';
-    curiosity.home.classList += ' anim-container';
-    curiosity.content.style.overflow = 'hidden';
+        (function fade() {
+            if ((el.style.opacity -= .1) < 0) {
+                el.style.display = 'none';
+            } else {
+                requestAnimationFrame(fade);
+            }
+        })();
+    }
+    fadeOut(loader);
 });
