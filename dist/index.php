@@ -1,7 +1,7 @@
 <?php
-include 'include/keys.php';
-include 'include/handle.php';
 include 'include/config.php';
+include 'include/handle.php';
+include 'include/keys.php';
 
 // Routing
 $q = !empty($_GET['q']) ? $_GET['q'] : '';

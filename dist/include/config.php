@@ -1,7 +1,7 @@
 <?php
 
-define('URL', 'http://localhost:8888/discover-mars/dist/');
-
+define('URL', 'http://localhost/GitHub/discover-mars/dist/');
+define('API_KEY', 'mAf0G7pDruydaGbfRmtxAIVNUCaRWRttre1z2RZB');
 
 // Connexion variables
 define('DB_HOST','localhost');

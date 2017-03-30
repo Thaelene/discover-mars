@@ -26,7 +26,7 @@ if(empty($error_messages)) {
 /* -----------------------
   Request the photo API
  -----------------------*/
-    $url_photo = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='.$date.API_KEY;
+    $url_photo = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='.$date.'&api_key='.API_KEY;
     $path_photo = './cache/photo/'.md5($date); // Name of the file : searched date, hached
 
     // Analyse if the data is in the cache
