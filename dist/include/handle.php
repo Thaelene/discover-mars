@@ -5,8 +5,8 @@ $error_messages = array();
 session_start();
 // If it is empty, the date become : today - 3 weeks
 $date = !empty($_GET['date']) ? date_format(new DateTime($_GET['date']), 'Y-m-d') : (date('Y-m-d', strtotime('-21 day')));
-$camera = (isset($_GET['camera'])) ? $_GET['camera'] : ['FHAZ', 'RHAZ', 'NAVCAM'];
-if ($camera == '') { $camera = ['FHAZ', 'RHAZ', 'NAVCAM']; };
+$camera = (isset($_GET['camera'])) ? $_GET['camera'] : ['FHAZ', 'RHAZ', 'NAVCAM', 'MARDI'];
+if ($camera == '') { $camera = ['FHAZ', 'RHAZ', 'NAVCAM', 'MARDI']; };
 $error_messages = array();
 
 
@@ -35,7 +35,7 @@ if(empty($error_messages)) {
 
         // If they are no photo
         if($forecast_photo == '{"errors":"No Photos Found"}') {
-            $error_messages['date'] = "Aucune information n'a pu être récupérée à cette date";
+            $error_messages['date'] = "The robot doesn't taken photos";
         }
         
         else {
@@ -53,7 +53,7 @@ if(empty($error_messages)) {
         $forecast_photo = curl_exec($curl);
 
         if($forecast_photo === '{"errors":"No Photos Found"}') {
-            $error_messages['date'] = "Aucune information n'a pu être récupérée à cette date";
+            $error_messages['date'] = "The robot doesn't taken photos";
         }
         
         else {
