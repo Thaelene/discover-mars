@@ -5,7 +5,7 @@ define('URL', 'http://localhost/GitHub/discover-mars/');
 
 // Connexion variables
 define('DB_HOST','localhost');
-define('DB_NAME','discover-mars'); // Replace 'your_dbb'
+define('DB_NAME','discover_mars'); // Replace 'your_dbb'
 define('DB_USER','root');
 define('DB_PASS','root');
 
